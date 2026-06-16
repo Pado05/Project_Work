@@ -24,6 +24,19 @@ st.set_page_config(
 st.title("📰 Guardian Environment News - Sentiment Analysis")
 
 # ============================================
+# HEADER CON IMMAGINE
+# ============================================
+col1, col2 = st.columns([1, 3])
+with col1:
+    st.image("cavallinho.jpg", width=150, caption="Environment Analysis")
+with col2:
+    st.markdown("""
+    ### Analizza i commenti degli Articoli Ambientali
+    Questo strumento analizza automaticamente la sentiment (positivo/negativo) 
+    dei commenti e degli articoli relativi all'inquinamento e all'ambiente.
+    """)
+
+# ============================================
 # CARICAMENTO MODELLO
 # ============================================
 @st.cache_resource
@@ -91,7 +104,7 @@ page = st.sidebar.radio(
 # PAGINA 1: DASHBOARD
 # ============================================
 if page == "📊 Dashboard":
-    st.header("📊 Analisi Temporale Sentimenti")
+    st.header("📊 Analisi Temporale Sentiment")
     
     try:
         # Carica dataset base
